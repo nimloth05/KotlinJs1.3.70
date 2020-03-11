@@ -16,6 +16,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testImplementation "org.jetbrains.kotlin:kotlin-test-js"
     implementation npm("css-loader")
+    implementation npm("style-loader")
 }
 
 kotlin.target {
