@@ -1,6 +1,10 @@
-import kotlin.browser.document
+import js.externals.jquery.jQuery
+import kotlin.browser.window
 
 fun main() {
     js("require('style.css');")
-    document.write("Hello, world!, hey its working!!!")
+
+    window.onload = {
+        jQuery("body").append("<span>Text added via jQuery</span>")
+    }
 }

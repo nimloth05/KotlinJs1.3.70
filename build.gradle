@@ -8,22 +8,25 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
+    maven { url "https://kotlin.bintray.com/js-externals" }
     mavenCentral()
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+    implementation("kotlin.js.externals:kotlin-js-jquery:3.2.0-0")
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testImplementation "org.jetbrains.kotlin:kotlin-test-js"
-    implementation npm("css-loader")
-    implementation npm("style-loader")
+
+    implementation(npm("css-loader"))
+    implementation(npm("style-loader"))
+    implementation(npm("jquery")) //needs to be added manually
 }
 
 kotlin.target {
-
     useCommonJs()
     browser {
-
     }
 }
 
